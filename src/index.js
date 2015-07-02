@@ -2,11 +2,12 @@
 var ga = require('./ga');
 
 
-function analytics(state, anonymizeIp) {
-  ga('send', 'pageview', {
-    'page': state.path,
-    'anonymizeIp': anonymizeIp
-  });
+function analytics(state, options) {
+  if (!options) {
+    options = {};
+  }
+  options.page = state.path;
+  ga('send', 'pageview', options);
 }
 
 
