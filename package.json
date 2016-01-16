@@ -3,9 +3,6 @@
   "version": "1.4.0",
   "description": "Google analytics component for react-router",
   "main": "src/index.js",
-  "peerDependencies": {
-    "react-router": "0.11.x - 0.13.x"
-  },
   "author": "Thomas Coopman @tcoopman",
   "repository": {
     "type": "git",

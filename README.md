@@ -9,15 +9,19 @@
 ## Example
 
 ```js
-'use strict';
-var React = require('react');
-var Router = require('react-router');
-var analytics = require('ga-react-router');
+import ga from 'ga-react-router'
+import createBrowserHistory from 'history/lib/createBrowserHistory'
+const history = createBrowserHistory()
 
-var routes = require('./routes');
-
-Router.run(routes, Router.HistoryLocation, function(Handler, state) {
-  React.render(<Handler />, document.getElementById('content'));
-  analytics(state);
+// Listen for changes to the current location. The
+// listener is called once immediately.
+const unlisten = history.listen(location => {
+  ga.push(location);
 });
+
+React.render(<Router history={history}>{routes}</Router>, el)
+
+// When you're finished, stop the listener.
+unlisten()
 ```
+
