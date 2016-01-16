@@ -1,4 +1,7 @@
-# Google analytics for react-router
+# Google analytics for any router
+
+This doesn't have any depency on react-router. You can use it with any router you like.
+See the example for how to use it with react-router
 
 ## How to use
 
