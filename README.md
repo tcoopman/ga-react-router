@@ -19,7 +19,7 @@ const history = createBrowserHistory()
 // Listen for changes to the current location. The
 // listener is called once immediately.
 const unlisten = history.listen(location => {
-  ga.send('send', location);
+  ga('send', location);
 });
 
 React.render(<Router history={history}>{routes}</Router>, el)
