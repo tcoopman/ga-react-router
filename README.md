@@ -28,3 +28,17 @@ React.render(<Router history={history}>{routes}</Router>, el)
 unlisten()
 ```
 
+## Advanced setup
+
+You can pass more information to `ga.create()` by adding a `GA_CONFIG` object to `webpack.DefinePlugin` like so:
+
+```js
+new webpack.DefinePlugin({
+  GA_TRACKING_CODE: JSON.stringify('XXXXXXXX'),
+  GA_CONFIG: {
+    'name': 'myTracker'
+  }
+})
+```
+
+You can read further on the subject [here](https://developers.google.com/analytics/devguides/collection/analyticsjs/field-reference#create).
