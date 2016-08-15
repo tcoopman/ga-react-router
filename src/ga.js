@@ -20,10 +20,12 @@ if(typeof window !== 'undefined' && typeof GA_TRACKING_CODE !== 'undefined') {
   );
 
   var ga = window.ga;
+
+  var config = typeof GA_CONFIG === 'undefined' ? {} : GA_CONFIG;
   var gaConfig = Object.assign({}, {
     trackingId: GA_TRACKING_CODE,
     cookieDomain: 'auto'
-  }, GA_CONFIG || {});
+  }, config);
 
   ga('create', gaConfig);
 
